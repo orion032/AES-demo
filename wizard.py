@@ -255,7 +255,8 @@ def show_tutorial():
         script_dir = os.path.dirname(os.path.abspath(__file__))
         tutorial_path = os.path.join(script_dir, 'TUTORIAL.md')
         
-        with open(tutorial_path, 'r') as f:
+        # Explicitly use UTF-8 encoding to handle special characters
+        with open(tutorial_path, 'r', encoding='utf-8') as f:
             tutorial = f.read()
         
         # Show tutorial in chunks (handle large files)
@@ -271,6 +272,8 @@ def show_tutorial():
     
     except FileNotFoundError:
         print_error("TUTORIAL.md not found. Make sure it's in the same directory as wizard.py.")
+    except UnicodeDecodeError:
+        print_error("Error reading TUTORIAL.md: encoding issue. File may be corrupted.")
 
 
 def main_wizard():
