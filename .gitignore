@@ -1,35 +1,47 @@
 *.py[cod]
-
-# C extensions
+__pycache__/
 *.so
 
-# Packages
-*.egg
-*.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
 .installed.cfg
-lib
-lib64
-
-# Installer logs
-pip-log.txt
+*.egg
+MANIFEST
 
 # Unit test / coverage reports
 .coverage
 .tox
 nosetests.xml
+.pytest_cache/
 
 # Translations
 *.mo
 
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Project-specific
+*.aes
+*.cif
+test_files/
+

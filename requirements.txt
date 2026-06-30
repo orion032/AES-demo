@@ -1,0 +1,3 @@
+# Python-AES Educational Project
+# No external dependencies required - uses only Python standard library
+# Compatible with Python 2.7+ and Python 3.6+
