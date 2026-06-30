@@ -425,6 +425,16 @@ def demo():
 def main():
     """Main entry point with improved argument parsing and error handling."""
     
+    # Handle wizard mode (beginner-friendly interface)
+    if len(sys.argv) > 1 and sys.argv[1] in ['--wizard', '-w', 'wizard']:
+        try:
+            from wizard import main_wizard
+            main_wizard()
+        except ImportError:
+            print("Error: Wizard module not found. Make sure wizard.py is in the same directory.")
+            sys.exit(1)
+        return
+    
     # Handle legacy arguments first for backward compatibility
     if len(sys.argv) > 1 and sys.argv[1] == '-demo':
         demo()
