@@ -251,7 +251,11 @@ def decrypt_wizard():
 def show_tutorial():
     """Show tutorial file."""
     try:
-        with open('TUTORIAL.md', 'r') as f:
+        # Use absolute path based on script location
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        tutorial_path = os.path.join(script_dir, 'TUTORIAL.md')
+        
+        with open(tutorial_path, 'r') as f:
             tutorial = f.read()
         
         # Show tutorial in chunks (handle large files)
@@ -266,7 +270,7 @@ def show_tutorial():
                 input("\n[Press Enter to continue...]")
     
     except FileNotFoundError:
-        print_error("TUTORIAL.md not found in current directory.")
+        print_error("TUTORIAL.md not found. Make sure it's in the same directory as wizard.py.")
 
 
 def main_wizard():
